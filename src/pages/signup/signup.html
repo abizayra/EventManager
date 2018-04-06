@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Register User Baru</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<img src="../../assets/imgs/new-user.png" width="64" height="64" />
+
+<form [formGroup]="signupForm" (submit)="signupUser()" novalidate>
+  <ion-item>
+    <ion-label stacked>Email</ion-label>
+    <ion-input formControlName="email" type="email" placeholder="Isikan email anda" [class.invalid]="!signupForm.controls.email.valid && blur">
+    </ion-input>
+  </ion-item>
+  <ion-item class="error-message" *ngIf="!signupForm.controls.email.valid && signupForm.controls.email.touched">
+    <p>Isikan email yang valid!</p>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label stacked>Password</ion-label>
+    <ion-input formControlName="password" type="password" placeholder="Isikan password anda" [class.invalid]="!signupForm.controls.password.valid && blur">
+    </ion-input>
+  </ion-item>
+  <ion-item class="error-message" *ngIf="!signupForm.controls.password.valid && signupForm.controls.password.touched">
+    <p>Isikan password minimal 6 karakter!</p>
+  </ion-item>
+
+  <button ion-button block type="submit" [disabled]="!signupForm.valid">
+    Buat User Baru
+  </button>
+</form>
+</ion-content>

@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Halaman Utama
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="goToProfile()">
+        <ion-icon name="person"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <button ion-button block color="primary" (click)="goToCreate()">
+    Buat Event Baru
+  </button>
+
+  <button ion-button block color="secondary" (click)="goToList()">
+    Lihat Daftar Event
+  </button>
+</ion-content>

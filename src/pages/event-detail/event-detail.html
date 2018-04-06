@@ -1,0 +1,33 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Event Detail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+ <ion-row padding>
+   <ion-col col-8>Revenue</ion-col>
+   <ion-col col-4 [class.profitable]="currentEvent?.revenue > 0" [class.no-profit]="currentEvent?.revenue < 0">
+    {{currentEvent?.revenue}}
+  </ion-col>
+ </ion-row>
+
+ <ion-card>
+   <ion-card-header>
+     {{currentEvent?.name}}
+   </ion-card-header>
+   <ion-card-content>
+    <p>Harga Tiket :
+      <strong> IDR{{currentEvent?.price}}</strong>
+    </p>
+    <p>Tanggal Event :
+      <strong> {{currentEvent?.date}}</strong>
+    </p>
+   </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

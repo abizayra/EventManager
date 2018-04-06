@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Buat Event Baru</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+<ion-item>
+  <ion-label stacked>Nama Event</ion-label>
+  <ion-input [(ngModel)]="eventName" type="text" placeholder="Isikan nama event">
+  </ion-input>
+</ion-item>
+
+<ion-item>
+    <ion-label stacked>Harga Event</ion-label>
+    <ion-input [(ngModel)]="eventPrice" type="number" placeholder="Isikan harga event">
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label stacked>Cost Event</ion-label>
+      <ion-input [(ngModel)]="eventCost" type="number" placeholder="Isikan Cost anda">
+      </ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label stacked>Tanggal Event</ion-label>
+      <ion-datetime displayFormat="D MMM, YYYY" pickerFormat="DD MMM YYYY" [(ngModel)]="eventDate">
+      </ion-datetime>
+    </ion-item>
+
+    <button ion-button block (click)="createEvent(eventName, eventDate, eventPrice, eventCost)">
+      Buat Event Baru
+    </button>
+</ion-content>

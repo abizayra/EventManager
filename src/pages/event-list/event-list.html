@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Event List</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+<ion-list>
+  <ion-item *ngFor="let event of eventList" (click)="goToEventDetail(event.id)">
+    <h2>{{event?.name}}</h2>
+    <p>
+      Tiket :
+      <strong>IDR{{event?.price}}</strong>
+    </p>
+    <p>
+      Tanggal :
+      <strong>{{event?.date}}</strong>
+    </p>
+  </ion-item>
+</ion-list>
+</ion-content>
